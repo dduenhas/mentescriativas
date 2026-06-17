@@ -273,7 +273,7 @@ var diviElementAnimationData = [{"style":"fade","duration":"1000ms","delay":"208
 var diviElementLinkData = [{"class":"et_pb_group_0","url":"/assets/img/2025/10/BNCC_EI_EF_110518_versaofinal_site.pdf","target":"_blank"},{"class":"et_pb_group_1","url":"/assets/img/2025/10/TALIS-OECD-Pesquisa-Professores-Brasil-2024-pt.pdf","target":"_blank"},{"class":"et_pb_group_2","url":"/assets/img/2025/10/01_Pensamento-Computacional.pdf","target":"_blank"},{"class":"et_pb_group_3","url":"/assets/img/2025/10/02_Narrativas-Digitais.pdf","target":"_blank"},{"class":"et_pb_group_4","url":"/assets/img/2025/10/03_Alo-Mundo.pdf","target":"_blank"},{"class":"et_pb_group_5","url":"/assets/img/2025/10/04_Eu-robo.pdf","target":"_blank"},{"class":"et_pb_group_6","url":"/assets/img/2025/10/05_Tecnologias-para-Empoderar.pdf","target":"_blank"},{"class":"et_pb_group_7","url":"/assets/img/2025/10/06__Elementar-Meu-Caro.pdf","target":"_blank"},{"class":"et_pb_group_8","url":"/assets/img/2025/10/07_Eureka.pdf","target":"_blank"},{"class":"et_pb_group_9","url":"/assets/img/2025/10/Curriculos_de_Computacao.pdf","target":"_blank"},{"class":"et_pb_group_10","url":"/assets/img/2025/10/Resumo_Executivo_Curriculos_de_Computacao.pdf","target":"_blank"},{"class":"et_pb_group_11","url":"/assets/img/2025/10/GuiadeConectividadeeBNCCComputacaonoscurriculosmunicipais.pdf","target":"_blank"},{"class":"et_pb_group_12","url":"/assets/img/2025/10/IA-na-Educacao-CIEB-NotaTecnica16.pdf","target":"_blank"},{"class":"et_pb_text_10_tb_footer","url":"/","target":"_self"},{"class":"et_pb_text_11_tb_footer","url":"/projeto/","target":"_self"},{"class":"et_pb_text_12_tb_footer","url":"/atividades/","target":"_self"},{"class":"et_pb_text_13_tb_footer","url":"/biblioteca/","target":"_blank"},{"class":"et_pb_text_14_tb_footer","url":"/recomendacoes/","target":"_blank"},{"class":"et_pb_text_15_tb_footer","url":"/blog/","target":"_self"},{"class":"et_pb_text_16_tb_footer","url":"/blog/","target":"_self"},{"class":"et_pb_text_17_tb_footer","url":"/contato/","target":"_self"}];
 //# sourceURL=divi-script-library-link-js-extra
 </script>
-<script id="divi-script-library-link-js" src="/assets/js/divi/includes/builder-5/visual-builder/build/script-library-link.js?ver=5.7.4"></script>
+<script id="divi-script-library-link-js" src="/assets/js/divi/includes/builder-5/visual-builder/build/script-library-link.js?ver=5.7.4"></script><script id="mc-divi-links-fallback-js" src="/assets/js/mc-divi-links-fallback.js?ver=1"></script>
 <script id="et-core-common-js" src="/assets/js/divi/core/admin/js/common.js?ver=5.7.4"></script>
 <script id="wp-accessibility-js-extra">
 var wpa = {"skiplinks":{"enabled":true,"output":""},"target":"","tabindex":"1","underline":{"enabled":false,"target":"a"},"videos":"","dir":"","viewport":"1","lang":"","titles":"1","labels":"1","wpalabels":{"s":"Pesquisar","author":"Nome","email":"E-mail","url":"Site","comment":"Coment\u00e1rio"},"alt":"","altSelector":".hentry img[alt]:not([alt=\"\"]), .comment-content img[alt]:not([alt=\"\"]), #content img[alt]:not([alt=\"\"]),.entry-content img[alt]:not([alt=\"\"])","current":"","errors":"","tracking":"","ajaxurl":"/wp-admin/admin-ajax.php","security":"86cdda74e6","action":"wpa_stats_action","url":"/biblioteca/","post_id":"20","continue":"","pause":"Pausar v\u00eddeo","play":"Reproduzir v\u00eddeo","restUrl":"/wp-json/wp/v2/media","ldType":"button","ldHome":"","ldText":"\u003Cspan class=\"dashicons dashicons-media-text\" aria-hidden=\"true\"\u003E\u003C/span\u003E\u003Cspan class=\"screen-reader\"\u003EDescri\u00e7\u00e3o longa\u003C/span\u003E"};
@@ -292,31 +292,5 @@ var diviBreakpointData = {"enabledBreakpoints":[{"order":50,"baseDevice":true,"e
 //# sourceURL=divi-script-library-multi-view-js-extra
 </script>
 <script id="divi-script-library-multi-view-js" src="/assets/js/divi/includes/builder-5/visual-builder/build/script-library-multi-view.js?ver=5.7.4"></script>
-<script id="biblioteca-pdf-links-js">
-(function () {
-  function initBibliotecaPdfLinks() {
-    var items = window.diviElementLinkData;
-    if (!items || !items.length) return;
-    items.forEach(function (item) {
-      if (!item.class || !item.url || item.class.indexOf("et_pb_group_") !== 0) return;
-      document.querySelectorAll("." + item.class).forEach(function (node) {
-        if (node.dataset.mcPdfLink) return;
-        node.dataset.mcPdfLink = "1";
-        node.style.cursor = "pointer";
-        node.addEventListener("click", function (event) {
-          if (event.target.closest("a, button")) return;
-          window.open(item.url, item.target || "_blank", "noopener,noreferrer");
-        });
-      });
-    });
-  }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initBibliotecaPdfLinks);
-  } else {
-    initBibliotecaPdfLinks();
-  }
-})();
-</script>
-	
-	</body>
+</body>
 </html>
