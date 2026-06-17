@@ -1,0 +1,40 @@
+# Mentes Criativas - Apache config
+DirectoryIndex index.html
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Redirect old WordPress URLs to new structure
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Activity pages moved under /atividades/
+  RewriteRule ^blockly-aula-1/?$ /atividades/blockly-aula-1/ [R=301,L]
+  RewriteRule ^blockly-aula-2/?$ /atividades/blockly-aula-2/ [R=301,L]
+  RewriteRule ^blockly-games-aula-3/?$ /atividades/blockly-games-aula-3/ [R=301,L]
+  RewriteRule ^blockly-aula-4/?$ /atividades/blockly-aula-4/ [R=301,L]
+  RewriteRule ^microbit-aula-0([1-4])/?$ /atividades/microbit-aula-0$1/ [R=301,L]
+  RewriteRule ^scratchjr-aula-1/?$ /atividades/scratchjr-aula-1/ [R=301,L]
+
+  # Blog posts moved from /2025/ to /blog/
+  RewriteRule ^2025/[0-9]+/(.+?)/?$ /blog/$1/ [R=301,L]
+  RewriteRule ^2025/10/222670-2/?$ /blog/bncc-competencias-e-habilidades/ [R=301,L]
+
+  # WordPress cruft -> home or blog
+  RewriteRule ^(author|category|wpa-stats-type|layout_tag|layout_category)/ - [R=301,L,/]
+  RewriteRule ^project/blockly-games-sugestao-de-aulas/?$ /atividades/blockly-games-sugestao-de-aulas/ [R=301,L]
+
+  # Serve directories without trailing index.html in URL
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
+</IfModule>

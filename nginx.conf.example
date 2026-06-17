@@ -1,0 +1,18 @@
+# Mentes Criativas - Nginx snippet (include in server block)
+location /assets/ {
+    expires 1y;
+    add_header Cache-Control "public, immutable";
+}
+
+# Redirects from old WordPress structure
+location = /blockly-aula-1 { return 301 /atividades/blockly-aula-1/; }
+location = /blockly-aula-2 { return 301 /atividades/blockly-aula-2/; }
+location = /blockly-games-aula-3 { return 301 /atividades/blockly-games-aula-3/; }
+location = /blockly-aula-4 { return 301 /atividades/blockly-aula-4/; }
+location ~ ^/microbit-aula-0([1-4])/?$ { return 301 /atividades/microbit-aula-0$1/; }
+location ~ ^/2025/[0-9]+/(.+)/?$ { return 301 /blog/$1/; }
+location = /2025/10/222670-2 { return 301 /blog/bncc-competencias-e-habilidades/; }
+
+location / {
+    try_files $uri $uri/ $uri/index.html =404;
+}
