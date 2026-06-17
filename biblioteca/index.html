@@ -292,6 +292,31 @@ var diviBreakpointData = {"enabledBreakpoints":[{"order":50,"baseDevice":true,"e
 //# sourceURL=divi-script-library-multi-view-js-extra
 </script>
 <script id="divi-script-library-multi-view-js" src="/assets/js/divi/includes/builder-5/visual-builder/build/script-library-multi-view.js?ver=5.7.4"></script>
+<script id="biblioteca-pdf-links-js">
+(function () {
+  function initBibliotecaPdfLinks() {
+    var items = window.diviElementLinkData;
+    if (!items || !items.length) return;
+    items.forEach(function (item) {
+      if (!item.class || !item.url || item.class.indexOf("et_pb_group_") !== 0) return;
+      document.querySelectorAll("." + item.class).forEach(function (node) {
+        if (node.dataset.mcPdfLink) return;
+        node.dataset.mcPdfLink = "1";
+        node.style.cursor = "pointer";
+        node.addEventListener("click", function (event) {
+          if (event.target.closest("a, button")) return;
+          window.open(item.url, item.target || "_blank", "noopener,noreferrer");
+        });
+      });
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBibliotecaPdfLinks);
+  } else {
+    initBibliotecaPdfLinks();
+  }
+})();
+</script>
 	
 	</body>
 </html>

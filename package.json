@@ -1,0 +1,17 @@
+{
+  "name": "mentescriativas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site estático Mentes Criativas — Cloudflare Worker + R2",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "node scripts/upload-large-r2.mjs && wrangler deploy",
+    "deploy:worker": "wrangler deploy",
+    "upload:r2-large": "node scripts/upload-large-r2.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250617.0",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.84.1"
+  }
+}

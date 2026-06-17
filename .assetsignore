@@ -1,0 +1,16 @@
+node_modules/
+src/
+scripts/
+tools/
+.git/
+.wrangler/
+package.json
+package-lock.json
+wrangler.jsonc
+tsconfig.json
+.gitignore
+README.md
+nginx.conf.example
+iniciar-site-local.bat
+r2-large-files.txt
+assets/img/2025/10/04_Eu-robo.original.pdf

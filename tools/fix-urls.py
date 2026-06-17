@@ -110,6 +110,8 @@ def main():
     for fp in ROOT.rglob("*"):
         if not fp.is_file() or fp.suffix.lower() not in EXT:
             continue
+        if fp.name.endswith(".min.js"):
+            continue
         if "tools" in fp.parts:
             continue
         original = fp.read_text(encoding="utf-8", errors="surrogateescape")

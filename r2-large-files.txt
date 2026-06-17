@@ -1,0 +1,2 @@
+# PDFs above 25 MiB go here (one path per line). Currently empty — all assets fit in Workers.
+# Example: assets/img/2025/10/large-file.pdf

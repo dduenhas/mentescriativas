@@ -6,6 +6,12 @@ __pycache__/
 .venv/
 venv/
 
+# Node
+node_modules/
+package-lock.json
+.wrangler/
+.dev.vars
+
 # OS
 .DS_Store
 Thumbs.db
@@ -17,5 +23,5 @@ desktop.ini
 *.swp
 *~
 
-# Logs
-*.log
+*.original.pdf
+

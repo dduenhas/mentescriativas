@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mentescriativas",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-17",
+  "workers_dev": true,
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "mentescriativas"
+    }
+  ]
+}
