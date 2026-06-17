@@ -3,6 +3,7 @@ src/
 scripts/
 tools/
 .git/
+.cursor/
 .wrangler/
 package.json
 package-lock.json

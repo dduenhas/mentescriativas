@@ -23,7 +23,7 @@ Workflow: **commit → push → Cloudflare deploy → validar**.
 
 Antes de commitar, resolver:
 
-1. **`scripts/sync-r2.mjs` conflito staged/deleted** — arquivo removido; não commitar:
+1. **`scripts/sync-r2.mjs` conflito staged/deleted** — estava staged como `new file` e apagado no disco (bloqueia aprovação de commit no Cursor). Resolver com:
    ```bash
    git add scripts/sync-r2.mjs
    ```
@@ -61,11 +61,13 @@ git restore --staged tools/test-*.mjs tools/check-jquery-corruption.py tools/ins
 git restore --staged "**/*.original.pdf" 2>/dev/null || true
 ```
 
-Commit (PowerShell — usar `--author` sem mudar git config):
+Commit (PowerShell — identidade inline; **não** usar `git config`):
 
 ```powershell
-git commit --author="Diego Duenhas <dduenhas@gmail.com>" -m "Mensagem concisa em 1-2 frases focada no porquê."
+git -c user.name="Diego Duenhas" -c user.email="dduenhas@gmail.com" commit --author="Diego Duenhas <dduenhas@gmail.com>" -m "Mensagem concisa em 1-2 frases focada no porquê."
 ```
+
+Se aparecer `Committer identity unknown`, é porque falta `user.name`/`user.email`; o `-c` acima resolve sem alterar config global.
 
 Se não houver mudanças para commitar, pular para o deploy.
 
