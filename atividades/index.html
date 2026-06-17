@@ -260,5 +260,38 @@ var diviBreakpointData = {"enabledBreakpoints":[{"order":50,"baseDevice":true,"e
 ["detect.min.js?ver=1.0.0-beta5",{"minViewportAspectRatio":0.4,"maxViewportAspectRatio":2.5,"isDebug":false,"extensionModuleUrls":["detect.min.js?ver=1.0.0-beta3"],"restApiEndpoint":"/wp-json/optimization-detective/v1/url-metrics:store","currentETag":"c93b393836d081c66f5e38c74108e361","currentUrl":"../atividades/?simply_static_page=3679","urlMetricSlug":"7c4c3edcb8845fdd9b9e4e43f33d8b28","cachePurgePostId":222761,"urlMetricHMAC":"0c52dc3eaa6d801d43b90e54281be0fd","urlMetricGroupStatuses":[{"minimumViewportWidth":0,"maximumViewportWidth":480,"complete":false},{"minimumViewportWidth":480,"maximumViewportWidth":600,"complete":false},{"minimumViewportWidth":600,"maximumViewportWidth":782,"complete":false},{"minimumViewportWidth":782,"maximumViewportWidth":null,"complete":false}],"storageLockTTL":60,"freshnessTTL":604800,"webVitalsLibrarySrc":"build/web-vitals.js?ver=5.1.0","gzdecodeAvailable":true,"maxUrlMetricSize":1048576}]
 </script>
 
+<script id="atividades-divi-links-js">
+(function () {
+  function openLink(url, target) {
+    if (target === "_blank") {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+      window.location.href = url;
+    }
+  }
+  function initAtividadesDiviLinks() {
+    var items = window.diviElementLinkData;
+    if (!items || !items.length) return;
+    items.forEach(function (item) {
+      if (!item.class || !item.url) return;
+      document.querySelectorAll("." + item.class).forEach(function (node) {
+        if (node.dataset.mcDiviLink) return;
+        node.dataset.mcDiviLink = "1";
+        node.style.cursor = "pointer";
+        node.addEventListener("click", function (event) {
+          if (event.target.closest("a, button")) return;
+          openLink(item.url, item.target || "_self");
+        });
+      });
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAtividadesDiviLinks);
+  } else {
+    initAtividadesDiviLinks();
+  }
+})();
+</script>
+
 </body>
 </html>
