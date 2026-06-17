@@ -33,16 +33,7 @@
 
   function initParallax() {
     restoreLazyBackgrounds();
-
-    if (typeof window.diviElementBackgroundParallaxInit === "function") {
-      try {
-        window.diviElementBackgroundParallaxInit();
-        return;
-      } catch (err) {
-        /* fall through to CSS parallax */
-      }
-    }
-
+    /* Divi trueParallax usa transform/height que vazam para seções acima no export estático. */
     applyCssParallaxFallback();
   }
 
