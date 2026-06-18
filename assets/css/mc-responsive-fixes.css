@@ -96,6 +96,15 @@ svg,
   }
 }
 
+/* Hero — reserva altura para reduzir CLS ao carregar fontes */
+.et_pb_heading_10 .et_pb_heading_container {
+  min-height: clamp(3.5rem, 8vw + 1.5rem, 7rem);
+}
+
+.et_pb_heading_11 .et_pb_heading_container {
+  min-height: clamp(2rem, 3vw + 1rem, 3rem);
+}
+
 /* Headings longos — evitar estouro horizontal */
 .et_pb_heading .et_pb_module_header,
 .et_pb_slide_title {

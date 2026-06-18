@@ -1,0 +1,40 @@
+/* Mentes Criativas — acessibilidade (touch targets, foco visível) */
+
+/* Botões do menu Divi — área mínima 44×44 px */
+.et_pb_menu__icon.et_pb_menu__search-button,
+.et_pb_menu__icon.et_pb_menu__close-search-button {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile_menu_bar {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dots do carrossel — alvo tocável 44×44, visual pequeno */
+.mc-slider-dot {
+  width: 10px;
+  height: 10px;
+  padding: 17px;
+  background-clip: content-box;
+  box-sizing: content-box;
+}
+
+.mc-slider-dot.mc-active {
+  transform: none;
+}
+
+/* Toggle titles promovidos para h3 — herdam estilo do h5 Divi */
+.et_pb_toggle h3.et_pb_toggle_title {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: inherit;
+}
