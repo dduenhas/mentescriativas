@@ -26,6 +26,7 @@
 
       slides.forEach(function (slide, i) {
         slide.classList.toggle("mc-active", i === current);
+        slide.classList.toggle("et-pb-active-slide", i === current);
         slide.setAttribute("aria-hidden", i === current ? "false" : "true");
       });
 

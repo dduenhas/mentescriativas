@@ -44,6 +44,9 @@
 }
 
 .et_pb_post_slider.mc-slider-ready .et_pb_slide {
+  display: block !important;
+  float: none !important;
+  margin-right: 0 !important;
   position: absolute;
   inset: 0;
   width: 100%;
