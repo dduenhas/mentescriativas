@@ -1,31 +1,30 @@
 .mc-section-monitores {
-  background-color: #ffffff;
-  padding: 64px 0;
+  background-color: var(--gcid-3cfc8c0c-5557-4a5d-9dab-24e78d615311, #f6f6f6);
+  padding: 32px 0;
 }
 
 .mc-section-monitores .et_pb_row {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 5%;
 }
 
 .mc-monitores-header {
   text-align: start;
-  margin: 0 0 40px;
+  margin: 0 0 24px;
 }
 
 .mc-monitores-title {
   font-family: var(--et_global_heading_font, "Work Sans", sans-serif);
   font-weight: 500;
-  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
+  line-height: 1.25;
   color: var(--gcid-heading-color, #1d1d1d);
-  margin: 0 0 12px;
+  margin: 0 0 8px;
 }
 
 .mc-monitores-subtitle {
   font-family: var(--et_global_body_font, "Work Sans", sans-serif);
-  font-size: clamp(1rem, 1.5vw + 0.25rem, 1.2rem);
+  font-size: clamp(0.95rem, 1.1vw + 0.65rem, 1.2rem);
   line-height: 1.6;
   color: var(--gcid-primary-color, #3d73ff);
   margin: 0;
@@ -33,11 +32,11 @@
 }
 
 .mc-monitores-text {
-  margin: 0 0 48px;
+  margin: 0 0 28px;
   text-align: start;
   font-family: var(--et_global_body_font, "Work Sans", sans-serif);
   font-size: 17px;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--gcid-body-color, rgba(0, 0, 0, 0.6));
 }
 
@@ -52,16 +51,15 @@
 .mc-monitores-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  list-style: none;
+  gap: 16px;
   margin: 0;
   padding: 0;
 }
 
 .mc-monitores-stat {
-  background: var(--gcid-3cfc8c0c-5557-4a5d-9dab-24e78d615311, #f6f6f6);
-  border-radius: 20px;
-  padding: 28px 24px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 18px;
   text-align: center;
   border-top: 4px solid var(--gcid-primary-color, #3d73ff);
 }
@@ -99,7 +97,7 @@
 }
 
 .mc-monitores-footnote {
-  margin: 40px 0 0;
+  margin: 24px 0 0;
   font-size: 14px;
   line-height: 1.6;
   color: var(--gcid-body-color, rgba(0, 0, 0, 0.6));
@@ -118,7 +116,7 @@
   }
 
   .mc-section-monitores {
-    padding: 48px 0;
+    padding: 24px 0;
   }
 }
 

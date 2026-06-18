@@ -174,8 +174,4 @@ svg,
   .et_pb_heading_11 .et_pb_module_header {
     font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
   }
-
-  .mc-section-monitores {
-    padding: 40px 0 !important;
-  }
 }
