@@ -29,6 +29,14 @@ A11Y_JS = (
     '<script id="mc-a11y-fixes-js" '
     'src="/assets/js/mc-a11y-fixes.js?ver=1"></script>'
 )
+TOGGLE_JS = (
+    '<script id="mc-toggle-fallback-js" '
+    'src="/assets/js/mc-toggle-fallback.js?ver=1"></script>'
+)
+TOGGLE_SCRIPT_RE = re.compile(
+    r'(<script id="divi-script-library-toggle-js"[^>]*></script>)',
+    re.I,
+)
 
 GOOGLE_FONTS_RE = re.compile(
     r'<link[^>]+id="et-builder-googlefonts-cached-css"[^>]*>\s*',
@@ -91,6 +99,12 @@ def inject_scripts(text: str) -> str:
     return text.replace("</body>", RUNTIME_JS + A11Y_JS + "</body>", 1)
 
 
+def inject_toggle_fallback(text: str) -> str:
+    if 'id="mc-toggle-fallback-js"' in text:
+        return text
+    return TOGGLE_SCRIPT_RE.sub(r"\1" + TOGGLE_JS, text, count=1)
+
+
 def patch_html(text: str, html_path: Path) -> tuple[str, bool]:
     original = text
     url = page_url(html_path)
@@ -119,6 +133,7 @@ def patch_html(text: str, html_path: Path) -> tuple[str, bool]:
 
     text = inject_head_bundle(text)
     text = inject_scripts(text)
+    text = inject_toggle_fallback(text)
 
     text = text.replace(
         "mc-responsive-fixes.css?ver=1",

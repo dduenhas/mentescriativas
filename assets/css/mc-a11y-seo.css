@@ -32,9 +32,7 @@
 }
 
 /* Toggle titles promovidos para h3 — herdam estilo do h5 Divi */
-.et_pb_toggle h3.et_pb_toggle_title {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  margin: inherit;
+.et_pb_toggle h3.et_pb_toggle_title,
+.et_pb_toggle .et_pb_toggle_title {
+  cursor: pointer;
 }
