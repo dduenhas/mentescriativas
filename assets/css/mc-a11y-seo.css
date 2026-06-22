@@ -1,5 +1,14 @@
 /* Mentes Criativas — acessibilidade (touch targets, foco visível) */
 
+/* Foco visível WCAG 2.4.7 — complementa mc-design-system.css */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+.et_pb_toggle_title:focus-visible {
+  outline: 2px solid var(--mc-dark, #26251e);
+  outline-offset: 2px;
+}
+
 /* Botões do menu Divi — área mínima 44×44 px */
 .et_pb_menu__icon.et_pb_menu__search-button,
 .et_pb_menu__icon.et_pb_menu__close-search-button {

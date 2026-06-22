@@ -18,7 +18,7 @@
 .et_pb_section_14 .et_pb_icon_3 .et_pb_icon_wrap .et-pb-icon {
   font-family: FontAwesome !important;
   font-weight: 900 !important;
-  color: #ff2f2f !important;
+  color: var(--mc-accent-text, #c24100) !important;
   font-size: clamp(120px, 18vw, 208px) !important;
 }
 
@@ -112,12 +112,18 @@
 }
 
 .et_pb_post_slider.mc-slider-ready .et_pb_more_button {
-  background: #fff !important;
-  color: #1d1d1d !important;
-  border-radius: 50px !important;
-  font-size: clamp(0.65rem, 1.1vw, 0.8rem) !important;
-  letter-spacing: 0.12em !important;
+  background: var(--mc-surface-300, #ebeae5) !important;
+  color: var(--mc-dark, #26251e) !important;
+  border: 1px solid var(--mc-border-subtle, rgba(38, 37, 30, 0.1)) !important;
+  border-radius: var(--mc-radius-pill, 9999px) !important;
+  font-size: clamp(0.75rem, 1.1vw, 0.875rem) !important;
+  letter-spacing: 0.06em !important;
   padding: 0.75rem 1.5rem !important;
+}
+
+.et_pb_post_slider.mc-slider-ready .et_pb_more_button:hover {
+  color: var(--mc-error, #b8254a) !important;
+  background: var(--mc-surface-400, #e6e5e0) !important;
 }
 
 /* Controles */
@@ -133,12 +139,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  color: #1d1d1d;
+  background: var(--mc-surface-300, rgba(235, 234, 229, 0.92));
+  color: var(--mc-dark, #26251e);
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;

@@ -1,0 +1,480 @@
+/*
+ * Mentes Criativas — Design System (DESIGN.md)
+ * Adaptação: Work Sans (display/UI), Georgia (editorial), system mono.
+ * Cores ajustadas para WCAG 2.2 AA (contraste ≥ 4.5:1 em texto normal).
+ */
+
+:root {
+  /* —— Superfícies (DESIGN.md §2) —— */
+  --mc-dark: #26251e;
+  --mc-cream: #f2f1ed;
+  --mc-surface-100: #f7f7f4;
+  --mc-surface-200: #f2f1ed;
+  --mc-surface-300: #ebeae5;
+  --mc-surface-400: #e6e5e0;
+  --mc-surface-500: #e1e0db;
+  --mc-white: #ffffff;
+
+  /* —— Marca e semântica (WCAG-adjusted) —— */
+  --mc-accent: #f54e00;
+  --mc-accent-text: #c24100;
+  --mc-accent-hover: #a33800;
+  --mc-gold: #936b24;
+  --mc-error: #b8254a;
+  --mc-error-bright: #cf2d56;
+  --mc-success: #1f8a65;
+
+  /* Texto secundário sólido — evita rgba 55% (~3.2:1) do DESIGN.md original */
+  --mc-text-secondary: #4d4c45;
+  --mc-text-muted: #5c5b54;
+
+  /* —— Bordas —— */
+  --mc-border-subtle: rgba(38, 37, 30, 0.1);
+  --mc-border-medium: rgba(38, 37, 30, 0.2);
+  --mc-border-strong: rgba(38, 37, 30, 0.55);
+
+  /* —— Tipografia —— */
+  --mc-font-display: "Work Sans", system-ui, -apple-system, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+  --mc-font-body: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mc-font-editorial: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
+    ui-serif, Cambria, "Times New Roman", serif;
+  --mc-font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --mc-text-hero: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+  --mc-text-display: clamp(1.75rem, 3vw + 0.75rem, 2.25rem);
+  --mc-text-h2: clamp(1.375rem, 2vw + 0.65rem, 1.625rem);
+  --mc-text-h3: clamp(1.125rem, 1.2vw + 0.6rem, 1.375rem);
+  --mc-text-title-sm: clamp(1rem, 0.5vw + 0.85rem, 1.375rem);
+  --mc-text-body-lg: clamp(1rem, 0.35vw + 0.92rem, 1.125rem);
+  --mc-text-body: clamp(0.9375rem, 0.2vw + 0.88rem, 1rem);
+  --mc-text-ui: clamp(0.875rem, 0.15vw + 0.82rem, 0.9375rem);
+  --mc-text-caption: clamp(0.75rem, 0.1vw + 0.72rem, 0.8125rem);
+
+  --mc-lh-tight: 1.15;
+  --mc-lh-snug: 1.25;
+  --mc-lh-normal: 1.5;
+  --mc-lh-relaxed: 1.65;
+
+  --mc-tracking-hero: -0.03em;
+  --mc-tracking-display: -0.02em;
+  --mc-tracking-h2: -0.012em;
+  --mc-tracking-h3: -0.005em;
+
+  /* —— Espaçamento (base 8px) —— */
+  --mc-space-2: 0.5rem;
+  --mc-space-3: 0.75rem;
+  --mc-space-4: 1rem;
+  --mc-space-6: 1.5rem;
+  --mc-space-8: 2rem;
+  --mc-space-12: 3rem;
+  --mc-space-16: 4rem;
+
+  /* —— Raio —— */
+  --mc-radius-sm: 4px;
+  --mc-radius-md: 8px;
+  --mc-radius-lg: 10px;
+  --mc-radius-pill: 9999px;
+
+  /* —— Sombras —— */
+  --mc-shadow-ambient: 0 0 16px rgba(0, 0, 0, 0.02),
+    0 0 8px rgba(0, 0, 0, 0.008);
+  --mc-shadow-card: 0 28px 70px rgba(0, 0, 0, 0.14),
+    0 14px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--mc-border-subtle);
+  --mc-shadow-focus: 0 0 0 3px rgba(38, 37, 30, 0.28);
+
+  --mc-transition: 150ms ease;
+  --mc-max-width: 75rem;
+
+  /* —— Override tokens Divi —— */
+  --gcid-primary-color: var(--mc-accent-text);
+  --gcid-secondary-color: var(--mc-error-bright);
+  --gcid-heading-color: var(--mc-dark);
+  --gcid-body-color: var(--mc-text-secondary);
+  --gcid-link-color: var(--mc-accent-text);
+  --gcid-3cfc8c0c-5557-4a5d-9dab-24e78d615311: var(--mc-surface-400);
+  --gcid-8a774e07-7ffa-496d-a3ae-ed0f5be735c7: var(--mc-dark);
+  --gcid-86e3b58b-8290-40f1-88ab-dd0e5cfed1b9: var(--mc-white);
+  --et_global_heading_font: "Work Sans";
+  --et_global_body_font: "Work Sans";
+}
+
+/* —— Base —— */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body,
+body.custom-background,
+#page-container {
+  background-color: var(--mc-cream) !important;
+  color: var(--mc-text-secondary);
+  font-family: var(--mc-font-body);
+  font-size: var(--mc-text-body-lg);
+  line-height: var(--mc-lh-relaxed);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+#main-content {
+  background-color: var(--mc-cream);
+}
+
+/* —— Tipografia global —— */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.et_pb_module_header {
+  font-family: var(--mc-font-display);
+  font-weight: 400;
+  color: var(--mc-dark);
+}
+
+h1,
+.et_pb_module_header h1,
+h1.et_pb_module_header {
+  font-size: var(--mc-text-display);
+  line-height: var(--mc-lh-tight);
+  letter-spacing: var(--mc-tracking-display);
+}
+
+h2,
+h2.et_pb_module_header {
+  font-size: var(--mc-text-h2);
+  line-height: var(--mc-lh-snug);
+  letter-spacing: var(--mc-tracking-h2);
+}
+
+h3,
+h3.et_pb_module_header,
+h3.et_pb_toggle_title {
+  font-size: var(--mc-text-h3);
+  line-height: var(--mc-lh-snug);
+  letter-spacing: var(--mc-tracking-h3);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--mc-text-title-sm);
+  line-height: var(--mc-lh-snug);
+}
+
+/* Hero home */
+.et_pb_heading_10 .et_pb_module_header {
+  font-size: var(--mc-text-hero) !important;
+  line-height: var(--mc-lh-tight) !important;
+  letter-spacing: var(--mc-tracking-hero) !important;
+  font-weight: 400 !important;
+}
+
+.et_pb_heading_11 .et_pb_module_header {
+  font-size: var(--mc-text-display) !important;
+  line-height: var(--mc-lh-snug) !important;
+  letter-spacing: var(--mc-tracking-display) !important;
+  font-weight: 400 !important;
+}
+
+/* Corpo editorial em blocos de texto longos */
+.et_pb_text_inner p,
+.et_pb_toggle_content p,
+.entry-content p,
+.mc-monitores-text {
+  font-family: var(--mc-font-editorial);
+  font-size: var(--mc-text-body-lg);
+  line-height: var(--mc-lh-relaxed);
+}
+
+/* —— Links (WCAG) —— */
+a {
+  color: var(--mc-accent-text);
+  text-underline-offset: 0.15em;
+  transition: color var(--mc-transition);
+}
+
+a:hover {
+  color: var(--mc-accent-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--mc-dark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.et_pb_bg_layout_dark a,
+.et_pb_slide_description a {
+  color: var(--mc-white);
+}
+
+.et_pb_bg_layout_dark a:hover {
+  color: var(--mc-surface-300);
+}
+
+/* —— Header / navegação —— */
+#main-header,
+.et-l--header .et_pb_section {
+  background-color: var(--mc-cream) !important;
+  box-shadow: 0 1px 0 var(--mc-border-subtle) !important;
+}
+
+#main-header .nav li a,
+#main-header .et_mobile_menu li a,
+.et_pb_menu__menu .nav li a {
+  font-family: var(--mc-font-display);
+  font-size: var(--mc-text-ui);
+  font-weight: 500;
+  color: var(--mc-dark) !important;
+  transition: color var(--mc-transition);
+}
+
+#main-header .nav li a:hover,
+#main-header .nav li a:focus-visible,
+.et_pb_menu__menu .nav li a:hover {
+  color: var(--mc-error) !important;
+  opacity: 1;
+}
+
+#main-header .nav li ul {
+  background: var(--mc-surface-100) !important;
+  border-top-color: var(--mc-accent-text) !important;
+  box-shadow: var(--mc-shadow-ambient) !important;
+}
+
+.mobile_menu_bar {
+  color: var(--mc-dark) !important;
+}
+
+/* —— Seções Divi —— */
+.et_pb_section {
+  background-color: var(--mc-cream);
+}
+
+.et_pb_section:nth-of-type(even):not(.et_pb_section_parallax):not(
+    :has(.et_pb_post_slider)
+  ) {
+  background-color: var(--mc-surface-100);
+}
+
+.et_pb_row {
+  max-width: var(--mc-max-width);
+}
+
+/* —— Botões —— */
+.et_pb_button,
+.et_pb_more_button,
+button,
+input[type="submit"],
+input[type="button"],
+.et_pb_menu__search-button,
+.et_pb_menu__close-search-button {
+  font-family: var(--mc-font-display) !important;
+  font-size: var(--mc-text-ui) !important;
+  font-weight: 400 !important;
+  border-radius: var(--mc-radius-md) !important;
+  transition: color var(--mc-transition), background-color var(--mc-transition),
+    box-shadow var(--mc-transition);
+}
+
+.et_pb_button,
+.et_pb_more_button {
+  background-color: var(--mc-surface-300) !important;
+  color: var(--mc-dark) !important;
+  border: 1px solid var(--mc-border-subtle) !important;
+  padding: 0.625rem 0.875rem 0.625rem 1rem !important;
+}
+
+.et_pb_button:hover,
+.et_pb_more_button:hover {
+  color: var(--mc-error) !important;
+  background-color: var(--mc-surface-400) !important;
+}
+
+.et_pb_button:focus-visible,
+.et_pb_more_button:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: none;
+  box-shadow: var(--mc-shadow-focus);
+}
+
+/* —— Toggles (sanfonados) —— */
+.et_pb_toggle {
+  background: var(--mc-surface-400);
+  border: 1px solid var(--mc-border-subtle);
+  border-radius: var(--mc-radius-md);
+  margin-bottom: var(--mc-space-3);
+  overflow: hidden;
+}
+
+.et_pb_toggle_title,
+.et_pb_toggle h3.et_pb_toggle_title {
+  font-family: var(--mc-font-display);
+  font-size: var(--mc-text-title-sm);
+  font-weight: 400;
+  letter-spacing: var(--mc-tracking-h3);
+  color: var(--mc-dark);
+  padding: var(--mc-space-4) var(--mc-space-6);
+  cursor: pointer;
+}
+
+.et_pb_toggle_content {
+  padding: 0 var(--mc-space-6) var(--mc-space-4);
+  color: var(--mc-text-secondary);
+}
+
+.et_pb_toggle_open .et_pb_toggle_title {
+  border-bottom: 1px solid var(--mc-border-subtle);
+}
+
+/* —— Cards / blocos de texto —— */
+.et_pb_text,
+.et_pb_blurb,
+.et_pb_image {
+  color: var(--mc-text-secondary);
+}
+
+.et_pb_blurb .et_pb_module_header {
+  font-size: var(--mc-text-h3);
+}
+
+/* PDF download group (home) */
+.et_pb_text_8 .et_pb_text_inner {
+  font-size: var(--mc-text-ui);
+  color: var(--mc-text-muted);
+}
+
+/* —— Footer —— */
+#main-footer,
+.et-l--footer .et_pb_section {
+  background-color: var(--mc-surface-400) !important;
+  border-top: 1px solid var(--mc-border-subtle);
+}
+
+#main-footer,
+#main-footer a,
+#main-footer .et_pb_text_inner {
+  color: var(--mc-text-secondary);
+  font-size: var(--mc-text-ui);
+}
+
+#main-footer a:hover {
+  color: var(--mc-error);
+}
+
+#main-footer h1,
+#main-footer h2,
+#main-footer h3,
+#main-footer h4 {
+  color: var(--mc-dark);
+  font-size: var(--mc-text-h3);
+}
+
+/* —— Formulários —— */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea,
+select {
+  font-family: var(--mc-font-body);
+  font-size: var(--mc-text-body);
+  color: var(--mc-dark);
+  background: var(--mc-surface-100);
+  border: 1px solid var(--mc-border-subtle);
+  border-radius: var(--mc-radius-md);
+  padding: var(--mc-space-2) var(--mc-space-3);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  border-color: var(--mc-border-medium);
+  box-shadow: var(--mc-shadow-focus);
+  outline: none;
+}
+
+/* —— Código —— */
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--mc-font-mono);
+  font-size: var(--mc-text-caption);
+}
+
+/* —— Hero brilho —— */
+.brilho-reflexo {
+  color: var(--mc-dark) !important;
+}
+
+.brilho-reflexo::before {
+  background: linear-gradient(
+    120deg,
+    rgba(242, 241, 237, 0) 0%,
+    rgba(242, 241, 237, 0.65) 50%,
+    rgba(242, 241, 237, 0) 100%
+  ) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brilho-reflexo::before {
+    animation: none !important;
+  }
+}
+
+/* —— Slider blog — overlay escuro quente (mantém contraste branco) —— */
+.et_pb_post_slider .et_pb_slide[style*="background-color"] {
+  background-color: var(--mc-dark) !important;
+}
+
+/* —— Ícone seção impacto — cor semântica acessível —— */
+.et_pb_section_14 .et_pb_icon_3 .et_pb_icon_wrap .et-pb-icon {
+  color: var(--mc-accent-text) !important;
+}
+
+/* —— Blog posts / listagens —— */
+.et_pb_post .entry-title a,
+.et_pb_blog_grid h2 a {
+  color: var(--mc-dark);
+  font-size: var(--mc-text-h3);
+}
+
+.et_pb_post .entry-title a:hover {
+  color: var(--mc-error);
+}
+
+.post-meta,
+.et_pb_post .post-meta {
+  font-size: var(--mc-text-caption);
+  color: var(--mc-text-muted);
+}
+
+/* —— Acessibilidade: foco visível global —— */
+:focus-visible {
+  outline: 2px solid var(--mc-dark);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* —— Responsivo —— */
+@media (max-width: 767px) {
+  .et_pb_section {
+    padding-top: var(--mc-space-8) !important;
+    padding-bottom: var(--mc-space-8) !important;
+  }
+}

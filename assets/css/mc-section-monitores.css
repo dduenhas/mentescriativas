@@ -1,43 +1,44 @@
 .mc-section-monitores {
-  background-color: var(--gcid-3cfc8c0c-5557-4a5d-9dab-24e78d615311, #f6f6f6);
-  padding: 32px 0;
+  background-color: var(--mc-surface-400, #e6e5e0);
+  padding: var(--mc-space-8, 2rem) 0;
 }
 
 .mc-section-monitores .et_pb_row {
-  max-width: 1280px;
+  max-width: var(--mc-max-width, 75rem);
   margin: 0 auto;
 }
 
 .mc-monitores-header {
   text-align: start;
-  margin: 0 0 24px;
+  margin: 0 0 var(--mc-space-6, 1.5rem);
 }
 
 .mc-monitores-title {
-  font-family: var(--et_global_heading_font, "Work Sans", sans-serif);
-  font-weight: 500;
-  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
+  font-family: var(--mc-font-display, "Work Sans", sans-serif);
+  font-weight: 400;
+  font-size: clamp(1.375rem, 2vw + 0.65rem, 1.625rem);
   line-height: 1.25;
-  color: var(--gcid-heading-color, #1d1d1d);
-  margin: 0 0 8px;
+  letter-spacing: -0.012em;
+  color: var(--mc-dark, #26251e);
+  margin: 0 0 var(--mc-space-2, 0.5rem);
 }
 
 .mc-monitores-subtitle {
-  font-family: var(--et_global_body_font, "Work Sans", sans-serif);
-  font-size: clamp(0.95rem, 1.1vw + 0.65rem, 1.2rem);
-  line-height: 1.6;
-  color: #2a5fd9;
+  font-family: var(--mc-font-body, "Work Sans", sans-serif);
+  font-size: clamp(0.9375rem, 0.35vw + 0.82rem, 1.0625rem);
+  line-height: 1.5;
+  color: var(--mc-accent-text, #c24100);
   margin: 0;
   font-weight: 500;
 }
 
 .mc-monitores-text {
-  margin: 0 0 28px;
+  margin: 0 0 var(--mc-space-6, 1.75rem);
   text-align: start;
-  font-family: var(--et_global_body_font, "Work Sans", sans-serif);
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--gcid-body-color, rgba(0, 0, 0, 0.6));
+  font-family: var(--mc-font-editorial, Georgia, serif);
+  font-size: clamp(1rem, 0.35vw + 0.92rem, 1.125rem);
+  line-height: 1.65;
+  color: var(--mc-text-secondary, #4d4c45);
 }
 
 .mc-monitores-text p {
@@ -51,63 +52,69 @@
 .mc-monitores-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: var(--mc-space-4, 1rem);
   margin: 0;
   padding: 0;
 }
 
 .mc-monitores-stat {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px 18px;
+  background: var(--mc-surface-100, #f7f7f4);
+  border-radius: var(--mc-radius-lg, 10px);
+  padding: var(--mc-space-4, 1.25rem) var(--mc-space-3, 1.125rem);
   text-align: center;
-  border-top: 4px solid var(--gcid-primary-color, #3d73ff);
+  border: 1px solid var(--mc-border-subtle, rgba(38, 37, 30, 0.1));
+  border-top: 4px solid var(--mc-accent-text, #c24100);
+  box-shadow: var(--mc-shadow-ambient);
 }
 
 .mc-monitores-stat-number {
   display: block;
-  font-family: var(--et_global_heading_font, "Work Sans", sans-serif);
+  font-family: var(--mc-font-display, "Work Sans", sans-serif);
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-  color: var(--gcid-primary-color, #3d73ff);
-  margin-bottom: 8px;
+  color: var(--mc-accent-text, #c24100);
+  margin-bottom: var(--mc-space-2, 0.5rem);
 }
 
 .mc-monitores-stat-label {
   display: block;
-  font-family: var(--et_global_body_font, "Work Sans", sans-serif);
-  font-size: 15px;
+  font-family: var(--mc-font-body, "Work Sans", sans-serif);
+  font-size: clamp(0.875rem, 0.2vw + 0.8rem, 0.9375rem);
   line-height: 1.45;
-  color: var(--gcid-heading-color, #1d1d1d);
+  color: var(--mc-dark, #26251e);
   font-weight: 500;
 }
 
 .mc-monitores-stat-desc {
   display: block;
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: var(--mc-space-2, 0.5rem);
+  font-size: clamp(0.8125rem, 0.15vw + 0.78rem, 0.875rem);
   line-height: 1.5;
-  color: var(--gcid-body-color, rgba(0, 0, 0, 0.6));
+  color: var(--mc-text-secondary, #4d4c45);
 }
 
 .mc-monitores-stat--text .mc-monitores-stat-number {
   font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .mc-monitores-footnote {
-  margin: 24px 0 0;
-  font-size: 14px;
+  margin: var(--mc-space-6, 1.5rem) 0 0;
+  font-size: clamp(0.8125rem, 0.15vw + 0.78rem, 0.875rem);
   line-height: 1.6;
-  color: var(--gcid-body-color, rgba(0, 0, 0, 0.6));
+  color: var(--mc-text-secondary, #4d4c45);
   text-align: start;
 }
 
 .mc-monitores-footnote a {
-  color: #2a5fd9;
+  color: var(--mc-accent-text, #c24100);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.mc-monitores-footnote a:hover {
+  color: var(--mc-accent-hover, #a33800);
 }
 
 @media only screen and (max-width: 980px) {
@@ -116,7 +123,7 @@
   }
 
   .mc-section-monitores {
-    padding: 24px 0;
+    padding: var(--mc-space-6, 1.5rem) 0;
   }
 }
 

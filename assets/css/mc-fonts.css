@@ -17,4 +17,7 @@ select,
 button {
   font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
+  font-size: clamp(0.9375rem, 0.2vw + 0.88rem, 1.0625rem);
+  line-height: 1.65;
+  color: #4d4c45;
 }
